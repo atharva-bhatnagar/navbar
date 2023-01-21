@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: cursive;
+      }
+      a {
+        text-decoration: none;
+      }
+      li {
+        list-style: none;
+      }
+      .logo {
+        font-size: 32px;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: teal;
+        color: white;
+      }
+      .nav-links a {
+        color: white;
+      }
+      .menu {
+        display: flex;
+        gap: 1em;
+        font-size: 18px;
+      }
+      .menu li:hover {
+        background-color: #4c9e9e;
+        border-radius: 3px;
+        transition: 0.3s ease;
+      }
+      .menu li {
+        padding: 4px 12px;
+      }
+      .dropdown {
+        position: absolute;
+        background-color: rgb(1, 139, 139);
+        border-radius: 8px;
+        padding: 1em 0;
+        display: none;
+      }
+      .services {
+        position: relative;
+      }
+      .services:hover .dropdown {
+        display: block;
+      }
+      input[type="checkbox"] {
+        display: none;
+      }
+
+      .hamburger {
+        font-size: 32px;
+        display: none;
+      }
+
+
+      @media (max-width: 750px) {
+        input[type="checkbox"] {
+          display: block;
+        }
+
+        .hamburger {
+          font-size: 32px;
+          display: block;
+        }
+        .navbar{
+          flex-direction: column;
+          width: 100px;
+          height: 100vh;
+        }
+        .menu{
+          display: flex;
+          flex-direction: column;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">LPU</div>
+      <input type="checkbox" id="checkbox_toggle" />
+        <label for="checkbox_toggle" class="hamburger">&#9776</label>
+      <ul class="nav-links">
+        <div class="menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/">About</a></li>
+          <li class="services">
+            <a href="/">Services</a>
+            <ul class="dropdown">
+              <li><a href="/">dropdown1</a></li>
+              <li><a href="/">dropdown2</a></li>
+              <li><a href="/">dropdown3</a></li>
+              <li><a href="/">dropdown4</a></li>
+              <li><a href="/">dropdown5</a></li>
+            </ul>
+          </li>
+          <li><a href="/">Pricing</a></li>
+          <li><a href="/">Contact</a></li>
+        </div>
+      </ul>
+    </nav>
+  </body>
+</html>
